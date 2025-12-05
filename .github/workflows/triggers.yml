@@ -1,0 +1,28 @@
+name: Trigger Workflow
+run-name: Triggers Workflow
+on:
+  push:
+    branches:
+      - aprender-github-actions
+  pull_request:
+    types: [opened]
+    branches:
+      - aprender-github-actions
+    paths:
+      - 'scripts/**'
+  schedule:
+    - cron: '30 00 * * *'  # Runs at 00:30 UTC every day
+jobs:
+  hola-mundo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Definir variable
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - name: Correr script
+        run: python holamundo.py
