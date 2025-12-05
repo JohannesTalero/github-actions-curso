@@ -1,13 +1,13 @@
-name: Expresiones
-run-name: ¡Estoy aprendiendo a usar Expresiones!
+name: experesiones
+run-name: Expresiones_Workflow
 on:
-  workflow_dispatch:
-    inputs:
+  workflow_dispatch: # Note: 'workflow_dispatch' is typically lowercase
+    inputs: # <--- Crucial missing key
       edad:
         description: 'Edad'
         required: true
         type: integer
-      nombre:
+      nombre: # <--- Correctly indented as an input peer to 'edad'
         description: 'Tu nombre'
         required: true
         default: 'Juan'
