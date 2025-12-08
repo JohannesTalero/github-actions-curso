@@ -1,8 +1,8 @@
 name: Contextos
 on: push
 jobs:
-  check_aprendiendo_github_actions:
-    if: ${{ github.ref == 'refs/heads/aprender-github-actions' }}
+  check_contextos:
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
