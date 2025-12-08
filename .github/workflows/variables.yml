@@ -1,0 +1,10 @@
+name: Variables
+on: push
+jobs:
+  check_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Mostrar color de Johannes
+        run: echo "El color de ${{ github.actor }} (con una variable local del repo) es ${{ vars.Color }}"
