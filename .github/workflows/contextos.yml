@@ -1,0 +1,11 @@
+name: Contextos
+on: push
+jobs:
+  check_contextos:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Correr script
+        run: echo "Desplegando en la rama ${{ github.repository_name }}"
