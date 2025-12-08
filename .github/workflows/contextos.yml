@@ -7,7 +7,5 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Definir variable
-        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
       - name: Correr script
-        run: python propuesta.py
+        run: echo "Desplegando en la rama ${{ github.repository_name }}"
