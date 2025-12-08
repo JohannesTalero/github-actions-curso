@@ -1,26 +1,26 @@
 name: experesiones
 run-name: Expresiones_Workflow
 on:
-  workflow_dispatch: # Note: 'workflow_dispatch' is typically lowercase
-    inputs: # <--- Crucial missing key
+  workflow_dispatch:
+    inputs:
       edad:
-        description: 'Edad'
         required: true
+        description: 'Edad'
         type: integer
-      nombre: # <--- Correctly indented as an input peer to 'edad'
+      nombre:
         description: 'Tu nombre'
         required: true
-        default: 'Juan'
+        default: 'Johannes'
         type: string
 jobs:
-  mayor:
-    if: ${{ inputs.edad >= 18 }} 
+  mayor_de_edad:
+    if: ${{ inputs.edad >= 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
         run: echo ${{ inputs.nombre }} es mayor de edad
-  menor:
-    if: ${{ inputs.edad < 18 }} 
+  menor_de_edad:
+    if: ${{ inputs.edad < 18 }}
     runs-on: ubuntu-latest
     steps:
       - name: Correr script
